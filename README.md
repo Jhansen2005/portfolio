@@ -29,7 +29,7 @@ git add -A && git commit -m "Add portfolio site"
 Create an empty repository named `portfolio` on GitHub first (no README, no .gitignore), then:
 
 ```bash
-git remote add origin https://github.com/jhansen2005/Portfolio.git
+git remote add origin https://github.com/jhansen2005/portfolio.git
 ```
 
 ```bash
