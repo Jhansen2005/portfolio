@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&family=Judson:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Willify</title>
+</head>
+<body>
+    <header>
+        <div id="main_navbar">
+            <p id="logo">Willify</p>
+            <img src="Asset/Musik_logo.png" id="logomusic">
+            <ul id="main_button">
+                <li><a href="index.html" class="nav_button">Home</a></li>
+                <li><a href="Song.html" class="nav_button">Songs</a></li>
+                <li><a href="register.html" class="nav_button">Register</a></li>
+                <li><a href="About Us.html" class="nav_button">About Us</a></li>
+                <a></a>
+            </ul>
+        </div>
+        <button id="button1" onclick="showSidebar()"><img src="Asset/threeburger_icon.png" width="50px" height="50px"></button>
+        <div id="sidebar">
+            <button id="button2" onclick="closeSidebar()"><img src="Asset/close_icon.png" width="50px"></button>
+            <ul id="side_bar">
+                <li><a href="index.html" class="nav_button">Home</a></li>
+                <li><a href="Song.html" class="nav_button">Songs</a></li>
+                <li><a href="register.html" class="nav_button">Register</a></li>
+                <li><a href="About Us.html" class="nav_button">About Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+    <main>
+        <div id="Register_Box">
+            <h1 style="font-size:64px; font-weight:700 ;">Sign Up</h1>
+            <br> 
+            <form id="register_form">
+                <div id ="columns_box">
+                    <div style="display: block;
+                        ">
+                        <label>Username</label><br>
+                        <input type="text" id="username" placeholder="Insert Username">
+                    </div>
+                    <div>
+                        <label>Password</label><br>
+                        <input type="password" id="password" placeholder="Insert Password">
+                    </div>
+                </div>
+                <br>
+                <div id ="columns_box">
+                    <div style="display: block;">
+                        <label>Age</label><br>
+                        <input type="number" id="age" placeholder="Insert Age">
+                    </div>
+                    <div>
+                        <label>Gender</label><br>
+                        <div id="gender_cont">
+                            <input type="radio" id="GenderM" name="gender">
+                            <label for="GenderM">Male</label>
+                        </div>
+
+                        <div id="gender_cont">
+                            <input type="radio" id="GenderF" name="gender">
+                            <label for="GenderF">Female</label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <label>Email Address</label><br>
+                <input type="text" id="email" placeholder="Jhansen@gmail.com">
+
+                <br><br>
+                <label>Date Of Birth</label><br>
+                <input type="date" id="date">
+                <br><br><br>
+                <button id="sign_button">Sign Up</button>
+                <p id="error_text"></p>
+            </form>
+            <script src="JS/Register.js"></script>
+        </div>
+        <img src="Asset/Sign_up.png" id="img1">
+    </main>
+
+    <script src="JS/Register.js"></script>
+    <footer>
+        <p id="main_footer">© 2024 Willify. All Rights Reserved PT.Willify | Jhansen</p>
+        <div id="subfooter">
+            <p class="black">Costumer Service</p>
+            <p>Willify@gmail.com</p>
+            <p>+62 102 1328 132</p>
+        </div>
+    </footer>
+</body>
+</html>

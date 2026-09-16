@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HearChat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>HearChat</h2>
+            </div>
+            <div class="user-profile">
+                <div class="avatar">
+                    <img src="asset/icon-dummy.png" alt="User Avatar">
+                </div>
+                <div class="status online"></div>
+                <div class="user-info">
+                    <h3>Jhansen</h3>
+                    <p>Active Now</p>
+                </div>
+                <a href="settings.html" class="settings-btn">
+                    <i class="fas fa-cog"></i>
+                </a>
+            </div>
+            <div class="contacts">
+                <h3>Chats</h3>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <ul class="contact-list">
+                    <!-- automatic rendering -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Chat Main Area -->
+        <div class="chat-main">
+            <div class="chat-header">
+                <div class="chat-contact-info">
+                    <div class="contact-avatar">
+                        <img src="asset/icon-dummy.png" alt="Contact Avatar">
+                        <span class="status online"></span>
+                    </div>
+                    <div class="contact-info">
+                        <h4>Erlangga</h4>
+                        <p>Online • Typing...</p>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button class="action-btn"><i class="fas fa-phone"></i></button>
+                    <button class="action-btn"><i class="fas fa-video"></i></button>
+                    <button class="action-btn"><i class="fas fa-info-circle"></i></button>
+                </div>
+            </div>
+            <div class="chat-messages">
+                <!-- automatic rendering -->
+            </div>
+            <div class="chat-input">
+                <div class="input-actions">
+                    <button class="action-btn"><i class="fas fa-paperclip"></i></button>
+                    <button class="action-btn"><i class="fas fa-image"></i></button>
+                </div>
+                <div class="message-input">
+                    <input type="text" placeholder="Type a message...">
+                </div>
+                <div class="send-actions">
+                    <button class="action-btn"><i class="fas fa-microphone"></i></button>
+                    <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="demo-backend.js"></script>
+    <script src="script.js"></script>
+    <style>
+        /* Highlight mic button when recording */
+        .send-actions .action-btn.recording {
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            animation: pulse 1s infinite ease-in-out;
+        }
+
+        /*Pulse animation */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.5);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+            }
+        }
+
+    </style>
+</body>
+</html>

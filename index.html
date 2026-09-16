@@ -1,0 +1,1477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Jhansen Orlando - Odoo developer. Six months rebuilding ERP modules across Odoo 10, 16 and 19 for a footwear manufacturer in Jakarta.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#127981;</text></svg>">
+<title>Jhansen Orlando Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Silkscreen:wght@400;700&display=swap">
+<style>
+  /* ============ tokens: full light palette on bare :root ============ */
+  :root{
+    --paper:#E8F0F8;
+    --surface:#FFFFFF;
+    --surface-2:#F3F8FD;
+    --ink:#0C1B2A;
+    --ink-2:#31485F;
+    --muted:#627B93;
+    --line:#C6D8E8;
+    --line-strong:#9FBAD2;
+
+    --blue:#1D6FE0;
+    --blue-soft:#E0EDFD;
+    --cyan:#0B9FBD;
+    --cyan-soft:#DDF3F8;
+    --sun:#D2830A;
+    --sun-soft:#FFF1D6;
+    --coral:#DB4A36;
+    --flag:#E5322A;
+    --skin:#E0A876;
+    --rail:#5E778F;
+    --rung:#8CA3B8;
+
+    --belt:#123253;
+    --wave-1:#1D6FE0;
+    --wave-2:#1391B4;
+    --wave-3:#0C3E66;
+
+    --shadow:0 1px 0 rgba(12,27,42,.05), 0 12px 26px -16px rgba(12,27,42,.34);
+    --shadow-lift:0 3px 0 rgba(12,27,42,.07), 0 22px 40px -18px rgba(12,27,42,.45);
+
+    --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+    --body:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+    --mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+    --pixel:"Silkscreen","IBM Plex Mono",Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#071320; --surface:#0D1D2E; --surface-2:#132738;
+      --ink:#E7F1FB; --ink-2:#B2C7DB; --muted:#7B93AB;
+      --line:#1D3348; --line-strong:#2C4A67;
+      --blue:#5AA3FF; --blue-soft:#0F2440;
+      --cyan:#3FD3F0; --cyan-soft:#082A33;
+      --sun:#FFC247; --sun-soft:#2C2211;
+      --coral:#FF7D6B;
+      --flag:#FF4A3A;
+      --skin:#F0C398;
+      --rail:#7E9BB8;
+      --rung:#46617C;
+      --belt:#0A1E33; --wave-1:#2B7EE8; --wave-2:#17A2C4; --wave-3:#0B2F4F;
+      --shadow:0 1px 0 rgba(0,0,0,.5), 0 12px 26px -16px rgba(0,0,0,.9);
+      --shadow-lift:0 3px 0 rgba(0,0,0,.6), 0 22px 40px -18px rgba(0,0,0,1);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#071320; --surface:#0D1D2E; --surface-2:#132738;
+    --ink:#E7F1FB; --ink-2:#B2C7DB; --muted:#7B93AB;
+    --line:#1D3348; --line-strong:#2C4A67;
+    --blue:#5AA3FF; --blue-soft:#0F2440;
+    --cyan:#3FD3F0; --cyan-soft:#082A33;
+    --sun:#FFC247; --sun-soft:#2C2211;
+    --coral:#FF7D6B;
+    --flag:#FF4A3A;
+    --skin:#F0C398;
+    --rail:#7E9BB8;
+    --rung:#46617C;
+    --belt:#0A1E33; --wave-1:#2B7EE8; --wave-2:#17A2C4; --wave-3:#0B2F4F;
+    --shadow:0 1px 0 rgba(0,0,0,.5), 0 12px 26px -16px rgba(0,0,0,.9);
+    --shadow-lift:0 3px 0 rgba(0,0,0,.6), 0 22px 40px -18px rgba(0,0,0,1);
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image:
+      linear-gradient(to right, var(--line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size:32px 32px;
+    color:var(--ink);
+    font-family:var(--body);font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+  a{color:var(--blue)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+  section{padding-block:clamp(46px,7vw,80px)}
+  section[id],footer[id]{scroll-margin-top:88px}
+  .rule{height:2px;background:var(--line-strong);border:0;margin:0}
+
+  h2.sec{
+    font-family:var(--display);font-weight:800;text-transform:uppercase;
+    font-size:clamp(34px,6vw,58px);line-height:.94;letter-spacing:-.01em;margin:0;text-wrap:balance;
+  }
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+  .sec-note{max-width:46ch;color:var(--ink-2);font-size:15px;margin:0}
+
+  /* ============ sticky nav ============ */
+  .mast{
+    position:sticky;top:env(safe-area-inset-top, 0px);z-index:50;
+    border-bottom:2px solid var(--ink);background:var(--surface);
+  }
+  .mast-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:10px;flex-wrap:wrap}
+  .brand{
+    font-family:var(--display);font-weight:800;text-transform:uppercase;
+    font-size:19px;letter-spacing:.02em;color:var(--ink);text-decoration:none;line-height:1;
+  }
+  .brand:hover{color:var(--blue)}
+  .navlinks{display:flex;gap:2px;flex-wrap:wrap}
+  .navlinks a{
+    font-family:var(--mono);font-size:12px;font-weight:500;text-decoration:none;
+    color:var(--ink-2);padding:6px 10px;border:1.5px solid transparent;
+    transition:color .15s ease,border-color .15s ease,background .15s ease;
+  }
+  .navlinks a:hover{color:var(--blue);border-color:var(--line-strong)}
+  .navlinks a.here{color:var(--blue);border-color:var(--blue);background:var(--blue-soft)}
+  .status{display:inline-flex;align-items:center;gap:8px;font-family:var(--pixel);font-size:11px;color:var(--ink-2)}
+  .dot{width:8px;height:8px;background:var(--cyan);animation:blink 1.4s steps(2,end) infinite}
+  @keyframes blink{50%{opacity:.25}}
+
+  /* ============ pixel canvases ============ */
+  .belt-band{display:block;width:100%;height:46px;border-bottom:2px solid var(--ink);cursor:pointer}
+  .wave-band{display:block;width:100%;height:150px;margin-bottom:-4px}
+
+  @media (prefers-reduced-motion: reduce){
+    .dot{animation:none}
+    *{transition:none !important}
+  }
+
+  /* ============ left rail climber ============ */
+  .rail{
+    position:fixed;left:10px;top:0;bottom:0;width:48px;z-index:40;
+    pointer-events:none;display:none;
+  }
+  @media (min-width:1260px){ .rail{display:block} }
+  .rail canvas{display:block;width:48px;height:100%;pointer-events:auto;cursor:pointer}
+  .bubble{
+    position:absolute;left:44px;width:168px;padding:9px 11px;
+    background:var(--surface);border:2px solid var(--blue);
+    font-family:var(--mono);font-size:11.5px;line-height:1.5;color:var(--ink);
+    box-shadow:var(--shadow);
+  }
+  .bubble::before{
+    content:"";position:absolute;left:-9px;top:14px;
+    width:0;height:0;border:5px solid transparent;border-right-color:var(--blue);
+  }
+
+  /* ============ hero ============ */
+  .hero{padding-block:clamp(38px,6vw,68px) clamp(28px,4vw,48px)}
+  .eyebrow{font-family:var(--pixel);font-size:12px;color:var(--blue);margin:0 0 16px;line-height:1.6}
+  .hero h1{
+    font-family:var(--display);font-weight:800;text-transform:uppercase;white-space:nowrap;
+    font-size:clamp(30px,8.6vw,118px);line-height:.9;letter-spacing:-.015em;margin:0;
+  }
+  .hero h1 .lo{color:var(--blue)}
+  .hero h1 .ltr{display:inline-block}
+  .lede{font-size:clamp(16.5px,2vw,20px);line-height:1.55;color:var(--ink-2);max-width:60ch;margin:20px 0 0}
+  .ver{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+  .chip{
+    font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.05em;
+    padding:6px 11px;border:1.5px solid var(--line-strong);background:var(--surface);color:var(--ink-2);
+    transition:transform .15s ease,border-color .15s ease,color .15s ease;
+  }
+  .chip:hover{transform:translateY(-2px);border-color:var(--blue);color:var(--blue)}
+  .chip.on{border-color:var(--blue);color:var(--blue);background:var(--blue-soft)}
+
+  .namewrap{position:relative;padding-top:72px}
+  .namewrap .fx{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
+  #fxback{z-index:0}
+  .namewrap h1{position:relative;z-index:1}
+  #fxfront{z-index:2}
+  #hop{z-index:3}
+  @media (max-width:520px){ .namewrap{padding-top:0} #hop{display:none} }
+
+  /* ============ spec strip ============ */
+  .specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:2px solid var(--ink);background:var(--surface)}
+  .spec{padding:18px;border-right:1px solid var(--line);transition:background .18s ease}
+  .spec:last-child{border-right:0}
+  .spec:hover{background:var(--blue-soft)}
+  .spec .n{font-family:var(--display);font-weight:700;font-size:46px;line-height:.9;color:var(--ink);font-variant-numeric:tabular-nums;display:block}
+  .spec .n em{font-style:normal;color:var(--cyan)}
+  .spec .l{display:block;margin-top:7px;font-size:13px;color:var(--muted);line-height:1.35}
+
+  /* ============ filters ============ */
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+  .filters button{
+    font-family:var(--pixel);font-size:11px;padding:9px 13px;cursor:pointer;
+    background:var(--surface);color:var(--ink-2);border:1.5px solid var(--line-strong);
+    transition:background .16s ease,color .16s ease,border-color .16s ease,transform .16s ease;
+  }
+  .filters button:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+  .filters button[aria-pressed="true"]{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .count{font-family:var(--mono);font-size:12px;color:var(--muted);margin:0 0 20px}
+
+  /* ============ dockets ============ */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
+  .docket{
+    position:relative;display:flex;flex-direction:column;
+    background:var(--surface);border:2px solid var(--ink);box-shadow:var(--shadow);
+    transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+  }
+  .docket::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+    background:var(--blue);transform:scaleX(0);transform-origin:left;
+    transition:transform .28s ease;
+  }
+  .docket:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:var(--blue)}
+  .docket:hover::after{transform:scaleX(1)}
+  .docket:hover .job{color:var(--blue)}
+  .docket.feat{grid-column:1/-1;border-color:var(--blue)}
+  @media (min-width:760px){
+    .docket.feat{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:auto 1fr;gap:0}
+    .docket.feat .d-top{grid-column:1/-1}
+  }
+  .d-top{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:9px 16px;border-bottom:1.5px solid var(--line);background:var(--surface-2);
+  }
+  .docket.feat .d-top{background:var(--blue-soft);border-bottom-color:var(--blue)}
+  .job{font-family:var(--pixel);font-size:11px;color:var(--ink);transition:color .2s ease}
+  .docket.feat .job{color:var(--blue)}
+  .line-tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;color:var(--cyan);background:var(--cyan-soft)}
+  .d-body{padding:18px 16px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .docket.feat .d-body{padding:24px 20px 26px}
+  .d-body h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(25px,3.2vw,34px);line-height:.98;margin:0}
+  .docket.feat .d-body h3{font-size:clamp(32px,5vw,48px)}
+  .d-body p{margin:0;font-size:14.5px;line-height:1.62;color:var(--ink-2)}
+  .docket.feat .d-body p{font-size:16px}
+  .techs{display:flex;gap:6px;flex-wrap:wrap;padding-top:4px}
+  .tech{
+    font-family:var(--mono);font-size:11px;padding:3px 8px;border:1px solid var(--line-strong);color:var(--muted);
+    transition:color .15s ease,border-color .15s ease,background .15s ease;
+  }
+  .tech:hover{color:var(--cyan);border-color:var(--cyan);background:var(--cyan-soft)}
+
+  .d-links{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:auto;padding-top:13px;border-top:1px dashed var(--line)}
+  .d-links a{
+    font-family:var(--mono);font-size:12px;font-weight:600;text-decoration:none;
+    padding:7px 11px;border:1.5px solid var(--blue);color:var(--blue);background:var(--surface);
+    transition:background .16s ease,color .16s ease,transform .16s ease;
+  }
+  .d-links a:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+  .d-links a.ghost{border-color:var(--line-strong);color:var(--ink-2)}
+  .d-links a.ghost:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .d-note{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.5;margin:0}
+
+  .d-side{
+    border-left:1.5px solid var(--blue);padding:24px 20px;display:flex;flex-direction:column;
+    gap:16px;justify-content:center;background:var(--surface-2);position:relative;overflow:hidden;
+  }
+  @media (max-width:759px){.d-side{border-left:0;border-top:1.5px solid var(--blue)}}
+  .kv{display:flex;flex-direction:column;gap:3px}
+  .kv dt{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .kv dd{margin:0;font-size:14.5px;color:var(--ink);font-weight:500}
+  .modrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+  .modchip{
+    font-family:var(--mono);font-size:12px;font-weight:500;
+    padding:4px 9px;border:1px solid var(--line-strong);color:var(--ink-2);
+    background:var(--surface);line-height:1.4;
+  }
+  button.modchip{cursor:pointer;border-color:var(--blue);color:var(--blue)}
+  button.modchip:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+  @keyframes flashcard{
+    0%,100%{box-shadow:var(--shadow)}
+    30%{box-shadow:0 0 0 4px var(--blue)}
+  }
+  .docket.flash{animation:flashcard 1.1s ease}
+
+  .stamp{
+    position:absolute;right:-12px;bottom:10px;transform:rotate(-10deg);
+    font-family:var(--pixel);font-size:11px;color:var(--cyan);opacity:.5;
+    border:3px double var(--cyan);padding:6px 10px;pointer-events:none;user-select:none;white-space:nowrap;
+  }
+
+  /* ============ process ============ */
+  .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2px;background:var(--line-strong);border:2px solid var(--ink)}
+  .step{background:var(--surface);padding:22px 20px 24px;display:flex;flex-direction:column;gap:9px;transition:background .18s ease}
+  .step:hover{background:var(--surface-2)}
+  .step .num{font-family:var(--pixel);font-size:11px;color:var(--coral)}
+  .step h4{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:28px;line-height:1;margin:0}
+  .step p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink-2)}
+
+  /* ============ toolboard ============ */
+  .board{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .kit{background:var(--surface);border:2px solid var(--ink);padding:16px 16px 18px;transition:transform .18s ease,border-color .18s ease}
+  .kit:hover{transform:translateY(-3px);border-color:var(--blue)}
+  .kit h4{font-family:var(--pixel);font-size:11px;color:var(--blue);margin:0 0 13px}
+  .kit ul{list-style:none;margin:0;padding:0;display:flex;gap:6px;flex-wrap:wrap}
+  .kit li{
+    font-size:13px;padding:4px 9px;background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2);
+    transition:background .15s ease,color .15s ease,border-color .15s ease;
+  }
+  .kit li:hover{background:var(--blue-soft);color:var(--blue);border-color:var(--blue)}
+
+  /* ============ footer ============ */
+  .foot{background:var(--surface);border-top:2px solid var(--ink)}
+  .foot-in{padding-block:36px 32px;display:grid;gap:26px}
+  @media (min-width:760px){.foot-in{grid-template-columns:1.25fr .75fr;align-items:start}}
+  .foot h2{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(34px,6vw,58px);line-height:.92;margin:0 0 10px}
+  .edu{font-size:15px;color:var(--ink-2);margin:0 0 20px}
+
+  .contact-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .mailbtn{
+    display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+    font-family:var(--mono);font-size:14px;font-weight:600;
+    color:#fff;background:var(--blue);padding:11px 16px;border:2px solid var(--blue);
+    transition:background .16s ease,border-color .16s ease,transform .16s ease;
+  }
+  .mailbtn:hover{background:var(--cyan);border-color:var(--cyan);color:#04222A;transform:translateY(-2px)}
+  .mailbtn svg{width:17px;height:17px;flex:none}
+  .iconlink{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:44px;height:44px;border:2px solid var(--ink);color:var(--ink);background:transparent;
+    transition:background .16s ease,color .16s ease,border-color .16s ease,transform .16s ease;
+  }
+  .iconlink:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:translateY(-2px)}
+  .iconlink svg{width:20px;height:20px}
+  .copied{font-family:var(--mono);font-size:12px;color:var(--cyan);opacity:0;transition:opacity .2s ease}
+  .copied.show{opacity:1}
+
+  .avail{border:2px solid var(--line-strong);padding:16px 16px 18px;background:var(--surface-2)}
+  .avail h5{font-family:var(--pixel);font-size:11px;color:var(--blue);margin:0 0 12px}
+  .avail dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13.5px}
+  .avail dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+  .avail dd{margin:0;color:var(--ink-2)}
+  .avail dd b{color:var(--ink);font-weight:600}
+</style>
+</head>
+<body>
+<header class="mast" id="top">
+  <div class="wrap mast-in">
+    <a class="brand" href="#top">Jhansen Orlando</a>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#academic">Coursework</a>
+      <a href="#toolbox">Toolbox</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="status"><span class="dot" aria-hidden="true"></span>OPEN TO WORK</span>
+  </div>
+</header>
+<div class="rail" id="rail">
+  <canvas id="climber" title="Say hi"></canvas>
+  <div class="bubble" id="bubble" hidden></div>
+</div>
+<canvas class="belt-band" id="belt" aria-hidden="true" title="Click to pause the line"></canvas>
+
+<main>
+  <div class="wrap">
+    <section class="hero">
+      <p class="eyebrow">ERP DEVELOPER &middot; ODOO PLATFORM &middot; JAKARTA ID</p>
+      <div class="namewrap" id="namewrap">
+        <canvas class="fx" id="fxback" aria-hidden="true"></canvas>
+        <h1 id="heroname">Jhansen <span class="lo">Orlando</span></h1>
+        <canvas class="fx" id="fxfront" aria-hidden="true"></canvas>
+        <canvas class="fx" id="hop" aria-hidden="true" title="Drag him"></canvas>
+      </div>
+      <p class="lede">I build and maintain ERP systems on the Odoo platform. For six months I sat on the IT floor of a footwear manufacturer running Odoo 10, 16 and 19 side by side, writing the Python and XML behind modules like Manufacturing, Inventory, Purchase, Sales, Maintenance, Quality Control and Product Lifecycle Management (PLM). I migrated modules between versions, traced bugs that only surface once real production data hits them, and turned shop-floor records into the reports the factory plans against.</p>
+      <div class="ver">
+        <span class="chip on">Odoo 10</span><span class="chip on">Odoo 16</span><span class="chip on">Odoo 19</span>
+        <span class="chip">Python</span><span class="chip">XML</span><span class="chip">PostgreSQL</span>
+      </div>
+    </section>
+
+    <div class="specs">
+      <div class="spec"><span class="n">6</span><span class="l">months on the IT&nbsp;Development team</span></div>
+      <div class="spec"><span class="n">3</span><span class="l">Odoo versions maintained in parallel</span></div>
+      <div class="spec"><span class="n">8</span><span class="l">client entities served</span></div>
+      <div class="spec"><span class="n">5</span><span class="l">modules migrated onto Odoo&nbsp;19</span></div>
+      <div class="spec"><span class="n">20<em>+</em></span><span class="l">business reports shipped</span></div>
+    </div>
+
+    <section id="work">
+      <div class="sec-head">
+        <h2 class="sec">The Work</h2>
+        <p class="sec-note">Six months inside the IT Development team at PT Porto Indonesia Sejahtera, a footwear manufacturer in Jakarta. The work ran across most of the ERP while three Odoo versions stayed live at once.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter projects by discipline">
+        <button type="button" data-f="all" aria-pressed="true">ALL</button>
+        <button type="button" data-f="backend" aria-pressed="false">BACKEND</button>
+        <button type="button" data-f="frontend" aria-pressed="false">FRONTEND</button>
+        <button type="button" data-f="data" aria-pressed="false">DATA</button>
+        <button type="button" data-f="automation" aria-pressed="false">AUTOMATION</button>
+        <button type="button" data-f="testing" aria-pressed="false">TESTING</button>
+      </div>
+      <p class="count" id="count">Showing all 10 jobs</p>
+
+      <div class="grid" id="grid">
+
+<article id="mig-01" class="docket feat" data-tags="backend">
+          <div class="d-top"><span class="job">MIG-01</span><span class="line-tag">Backend</span></div>
+          <div class="d-body">
+            <h3>Odoo 10 &rarr; 19 Migration</h3>
+<p>The main project of the internship: moving the company off Odoo 10 while three versions stayed live at once. I carried five modules onto the new version, starting with Workflow Activity, the module driving the approval flow in every other module that has one.</p>
+            <p>The versions differ enough that most of this was a rebuild rather than a port: broken kanban views, view layouts that no longer applied, fields that silently refused to render, and CSS work to keep the interface familiar to the people already using it. The same move pulled in the modules the factory runs on every day, where Odoo 19 behaved differently from the Odoo 10 everyone knew and had to be reworked to match.</p>
+            <div class="techs"><span class="tech">Python 3.12</span><span class="tech">XML</span><span class="tech">Odoo ORM</span><span class="tech">CSS</span></div>
+            <div class="d-links"><p class="d-note">Internal company system. The code belongs to PT Porto Indonesia Sejahtera.</p></div>
+          </div>
+          <div class="d-side">
+            <div class="kv">
+              <dt>Modules migrated</dt>
+              <dd class="modrow">
+                <button type="button" class="modchip go" data-go="wfa-02">Workflow Activity &rarr;</button>
+                <button type="button" class="modchip go" data-go="tkt-03">Ticketing &rarr;</button>
+                <button type="button" class="modchip go" data-go="plm-05">PLM &rarr;</button>
+                <button type="button" class="modchip go" data-go="mnt-04">Maintenance &rarr;</button>
+                <button type="button" class="modchip go" data-go="req-06">Request &rarr;</button>
+              </dd>
+            </div>
+            <div class="kv">
+              <dt>Modules reworked</dt>
+              <dd class="modrow">
+                <button type="button" class="modchip go" data-go="mfg-07">Manufacturing &rarr;</button>
+                <button type="button" class="modchip go" data-go="inv-08">Inventory &rarr;</button>
+                <button type="button" class="modchip go" data-go="pur-09">Purchase &rarr;</button>
+                <button type="button" class="modchip go" data-go="sls-10">Sales &rarr;</button>
+              </dd>
+            </div>
+            <div class="kv"><dt>Versions in play</dt><dd>Odoo 10 &rarr; 16 &rarr; 19</dd></div>
+            <span class="stamp" aria-hidden="true">IN PRODUCTION</span>
+          </div>
+        </article>
+
+        <article id="wfa-02" class="docket" data-tags="backend">
+          <div class="d-top"><span class="job">WFA-02</span><span class="line-tag">Backend</span></div>
+          <div class="d-body">
+            <h3>Workflow Activity</h3>
+            <p>The module that drives the approval flow in every other module that has one. It started on Odoo 10, went to Odoo 16 first and then on to Odoo 19, so I migrated the same module twice. I owned it from the module structure through to people working in it day to day.</p>
+            <p>Kanban views broke outright, layouts that behaved in 16 no longer applied, and some fields simply refused to appear on their forms. I also wrote the CSS that brought the interface back to something the existing users recognised.</p>
+            <div class="techs"><span class="tech">Python</span><span class="tech">XML</span><span class="tech">Odoo ORM</span><span class="tech">CSS</span></div>
+            <div class="d-links"><p class="d-note">Internal company system.</p></div>
+          </div>
+        </article>
+
+        <article id="tkt-03" class="docket" data-tags="backend">
+          <div class="d-top"><span class="job">TKT-03</span><span class="line-tag">Backend</span></div>
+          <div class="d-body">
+            <h3>Ticketing</h3>
+            <p>The module the IT team logs its own issues in, running the same report, assign and verify loop described further down this page.</p>
+            <p>The request was to make the description template follow the team raising the ticket, instead of one template serving everybody. I built it on Odoo 10 first, the version in live production, then developed the same thing into Odoo 16 and Odoo 19 so all three behaved the same way.</p>
+            <div class="techs"><span class="tech">Python</span><span class="tech">XML</span><span class="tech">Odoo ORM</span></div>
+            <div class="d-links"><p class="d-note">Internal company system.</p></div>
+          </div>
+        </article>
+
+<article id="mnt-04" class="docket" data-tags="backend">
+          <div class="d-top"><span class="job">MNT-04</span><span class="line-tag">Backend</span></div>
+          <div class="d-body">
+            <h3>Maintenance</h3>
+            <p>Mould asset management on Odoo 19: Operation, Master and Configuration menus, with machine servicing scheduled on operating hours. Effectively a small warehouse system of its own, just for moulds.</p>
+            <p>I was one of the people building it rather than the sole author. The Master section was shared work, and a good part of my time on this module went into fixing bugs as they surfaced.</p>
+            <div class="techs"><span class="tech">Python</span><span class="tech">XML</span><span class="tech">PostgreSQL</span></div>
+            <div class="d-links"><p class="d-note">Internal company system.</p></div>
+          </div>
+        </article>
+
+<article id="plm-05" class="docket" data-tags="backend">
+          <div class="d-top"><span class="job">PLM-05</span><span class="line-tag">Backend</span></div>
+          <div class="d-body">
+            <h3>Product Lifecycle Management</h3>
+            <p>Worked on product master data: the color and size variants, and the master product records behind them. Rewrote Change Color so a variant rewrites its own attribute-value combination instead of routing through the template, which keeps the SKU in step with it.</p>
+            <p>Added CBM, dimension and weight recalculation, plus a mandatory-BOM check that notifies PPIC when one is incomplete. Traced a BOM that supposedly did not exist to two duplicate Dus unit records carrying different conversion values.</p>
+            <div class="techs"><span class="tech">Python</span><span class="tech">XML</span></div>
+            <div class="d-links"><p class="d-note">Internal company system.</p></div>
+          </div>
+        </article>
+
+        <article id="req-06" class="docket" data-tags="backend">
+          <div class="d-top"><span class="job">REQ-06</span><span class="line-tag">Backend</span></div>
+          <div class="d-body">
+            <h3>Request</h3>
+            <p>My first migration, in my first month: the Request module moved from Odoo 10 to Odoo 16 as groundwork for the wider version change that followed. A smaller module, and a useful one to learn on before the bigger migrations started.</p>
+            <div class="techs"><span class="tech">Python</span><span class="tech">XML</span></div>
+            <div class="d-links"><p class="d-note">Internal company system.</p></div>
+          </div>
+        </article>
+
+<article id="mfg-07" class="docket" data-tags="backend data testing">
+          <div class="d-top"><span class="job">MFG-07</span><span class="line-tag">Backend</span></div>
+          <div class="d-body">
+            <h3>Manufacturing</h3>
+            <p>Fixes and additions across MPS, Manufacturing Order, Work Order and Production Form, covering the Portelas operation type on Manufacturing Order, the master product and its variants, and the reports sitting on top of them.</p>
+            <p>Added the sequence numbering that was missing, gated production closure on a WO / Production Form color match, and moved material tolerance from per-article to per-machine. Finished-good quantity on the PVC line kept failing validation even when the data was right; the cause was a Prs-to-Dus conversion factor missing from the formula.</p>
+            <div class="techs"><span class="tech">Python</span><span class="tech">XML</span><span class="tech">PostgreSQL</span></div>
+            <div class="d-links"><p class="d-note">Internal company system.</p></div>
+          </div>
+        </article>
+
+<article id="inv-08" class="docket" data-tags="backend">
+          <div class="d-top"><span class="job">INV-08</span><span class="line-tag">Backend</span></div>
+          <div class="d-body">
+            <h3>Inventory &amp; Transfers</h3>
+            <p>Replaced partial stock reservation with all-or-nothing, fixed the goods-return flow and Delivery Insurance totals, and rebuilt Internal Transfer from its generation logic outward. Restored drill-down on All Stock Move along with columns Odoo 19 had quietly dropped.</p>
+            <div class="techs"><span class="tech">Python</span><span class="tech">Odoo ORM</span></div>
+            <div class="d-links"><p class="d-note">Internal company system.</p></div>
+          </div>
+        </article>
+
+<article id="pur-09" class="docket" data-tags="backend">
+          <div class="d-top"><span class="job">PUR-09</span><span class="line-tag">Backend</span></div>
+          <div class="d-body">
+            <h3>Generate Receive Item</h3>
+            <p>One-click receipt generation straight from a Purchase Order, replacing document-by-document entry, fitted to three Odoo versions and eight client deployments. On Odoo 19 the documents failed validation and skipped their accounting entries. The wizard was creating them without one field the accounting module relied on, so it had no way to decide how to post them.</p>
+            <div class="techs"><span class="tech">Python</span><span class="tech">Odoo Wizard</span><span class="tech">Accounting</span></div>
+            <div class="d-links"><p class="d-note">Internal company system.</p></div>
+          </div>
+        </article>
+
+        <article id="sls-10" class="docket" data-tags="backend">
+          <div class="d-top"><span class="job">SLS-10</span><span class="line-tag">Backend</span></div>
+          <div class="d-body">
+            <h3>Sales Order Flow</h3>
+            <p>Tightened the order flow so data could not drift once a document existed. Quantity stays editable right up to container loading, and the moment a Delivery Order is generated the record locks. Expected Delivery is validated at that same point, while there is still something to check it against.</p>
+            <div class="techs"><span class="tech">Python</span><span class="tech">XML</span></div>
+            <div class="d-links"><p class="d-note">Internal company system.</p></div>
+          </div>
+        </article>
+
+<article id="web-11" class="docket" data-tags="frontend automation">
+          <div class="d-top"><span class="job">WEB-11</span><span class="line-tag">Frontend</span></div>
+          <div class="d-body">
+            <h3>Contact Us &amp; Lark Base</h3>
+            <p>Built the public-facing page on porto.co.id, laying out the form and styling the interface in HTML and CSS to the criteria set by the Business Analyst team. Set up the Lark Base table behind it and built the integration flow linking the two, chaining trigger and action steps so every submission is routed into the right record automatically, with no manual rekeying.</p>
+            <div class="techs"><span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">Lark Base</span><span class="tech">Anycross</span></div>
+            <div class="d-links">
+              <a href="https://porto.co.id/contact_us" target="_blank" rel="noopener noreferrer">Live page &#8599;</a>
+            </div>
+          </div>
+        </article>
+
+<article id="aut-12" class="docket" data-tags="backend automation">
+          <div class="d-top"><span class="job">AUT-12</span><span class="line-tag">Automation</span></div>
+          <div class="d-body">
+            <h3>Sales Order Scheduler</h3>
+            <p>Built on Odoo 10, outside the migration work. Every Monday at 16:00 it creates the week's Sales Quotation, already filled with the newly released products, replacing a routine users had been doing manually.</p>
+            <div class="techs"><span class="tech">Python</span><span class="tech">Odoo Scheduler</span></div>
+            <div class="d-links"><p class="d-note">Internal company system.</p></div>
+          </div>
+        </article>
+
+<article id="rpt-13" class="docket" data-tags="data">
+          <div class="d-top"><span class="job">RPT-13</span><span class="line-tag">Data</span></div>
+          <div class="d-body">
+            <h3>Business Reporting</h3>
+            <p>20+ reports across Sales, Mitra (subcontract production) and Manufacturing: Sales vs COGS margin, SO Delivery Lead Time, OEE and downtime, LHP per machine / shift / day, and COGM per shift and production line. The work was rarely the layout; it was proving which field actually held the number.</p>
+            <div class="techs"><span class="tech">Python</span><span class="tech">QWeb</span><span class="tech">SQL</span></div>
+            <div class="d-links"><p class="d-note">Internal company system.</p></div>
+          </div>
+        </article>
+
+<article id="dat-14" class="docket" data-tags="data testing">
+          <div class="d-top"><span class="job">DAT-14</span><span class="line-tag">Data</span></div>
+          <div class="d-body">
+            <h3>Migration Data Integrity</h3>
+            <p>Handled the data side of the same Odoo 10 to 19 move: checking, restructuring and validating records so nothing arrived in a shape the new model would reject. Cross-reading the Odoo 10 exports also exposed fields the new reports were missing, Transaction Date among them.</p>
+            <div class="techs"><span class="tech">PostgreSQL</span><span class="tech">SQL</span></div>
+            <div class="d-links"><p class="d-note">Internal company system.</p></div>
+          </div>
+        </article>
+
+      </div>
+      <p id="empty" class="sec-note" hidden style="margin-top:18px">No jobs on that line. Try another filter.</p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <div class="wrap">
+    <section id="process">
+      <div class="sec-head">
+        <h2 class="sec">How a Job Moves</h2>
+        <p class="sec-note">Every request at Porto followed the same route, from the first report to the finished fix. Deciding when something was ready was never my call alone.</p>
+      </div>
+      <div class="flow">
+        <div class="step">
+          <span class="num">STEP 01</span><h4>Intake</h4>
+          <p>A user runs into a problem and reports it along with the data behind it. The IT BA or the IT Manager decides how urgent it is, then passes it to a developer to fix.</p>
+        </div>
+        <div class="step">
+          <span class="num">STEP 02</span><h4>Diagnose &amp; Build</h4>
+          <p>I read the evidence before touching any code, because the hard bugs were rarely where the error message pointed. Most came down to the same handful of causes: a field left empty, data that never got pulled through, a duplicate record where there should have been one, or a value read from the wrong source.</p>
+        </div>
+        <div class="step">
+          <span class="num">STEP 03</span><h4>Verify</h4>
+          <p>The Business Analyst tests the result against what the business actually needs, not against what I assumed. If it falls short, it comes back to me, gets fixed, and goes back for testing again. Only once it passes does it reach real users.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <div class="wrap">
+    <section id="academic">
+      <div class="sec-head">
+        <h2 class="sec">Coursework</h2>
+        <p class="sec-note">University projects at BINUS, before the internship. AI and front-end, which is where I started. The two front-end ones run live here.</p>
+      </div>
+      <div class="grid">
+
+        <article class="docket">
+          <div class="d-top"><span class="job">UNI-01</span><span class="line-tag">Deep Learning</span></div>
+          <div class="d-body">
+            <h3>Autoencoder Defect Detection</h3>
+            <p>Group project on garment quality control. I worked on the model side and built the Variational Autoencoder, which the team then compared against a Convolutional Autoencoder to see which one caught real defects rather than noise.</p>
+            <div class="techs"><span class="tech">Python</span><span class="tech">TensorFlow</span><span class="tech">PyTorch</span><span class="tech">NumPy</span><span class="tech">OpenCV</span></div>
+            <div class="d-links">
+              <a class="ghost" href="https://drive.google.com/drive/folders/1D3SYU32uYv0yjKLo1TMonkfs8irqWkOT?usp=drive_link" target="_blank" rel="noopener noreferrer">Notebook &amp; dataset &#8599;</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="docket">
+          <div class="d-top"><span class="job">UNI-02</span><span class="line-tag">Frontend</span></div>
+          <div class="d-body">
+            <h3>Hear Chat</h3>
+            <p>Group project. Built the interface for an assistive chat application aimed at visually impaired users, where the layout has to work for a screen reader first and an eye second.</p>
+            <div class="techs"><span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">JavaScript</span></div>
+            <div class="d-links">
+              <a href="projects/hear-chat/">Open demo &#8599;</a>
+              <a class="ghost" href="https://github.com/JustinZ26/HearChat" target="_blank" rel="noopener noreferrer">Source &#8599;</a>
+              <p class="d-note">The demo runs the real interface against stubbed API responses. The Express and MySQL backend is not hosted.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="docket">
+          <div class="d-top"><span class="job">UNI-03</span><span class="line-tag">Frontend</span></div>
+          <div class="d-body">
+            <h3>Willify</h3>
+            <p>Individual project. A responsive UI for a Spotify-like music platform: home, song list, seven song-detail pages, sign-up and an about page, built from a Figma file down to working CSS.</p>
+            <div class="techs"><span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">Figma</span></div>
+            <div class="d-links">
+              <a href="projects/willify/">Open demo &#8599;</a>
+              <a class="ghost" href="https://drive.google.com/drive/folders/1_1E67W9o9VkS0c95e7OT2DDQZVg9eV4z?usp=drive_link" target="_blank" rel="noopener noreferrer">Source &#8599;</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <div class="wrap">
+    <section id="toolbox">
+      <div class="sec-head">
+        <h2 class="sec">Toolboard</h2>
+        <p class="sec-note">What I reach for, grouped the way I actually use it.</p>
+      </div>
+      <div class="board">
+        <div class="kit"><h4>ERP</h4><ul><li>Odoo 10 / 16 / 19 custom modules</li><li>Odoo ORM</li><li>QWeb reports</li><li>PostgreSQL</li><li>Cross-version migration</li><li>Process automation</li></ul></div>
+        <div class="kit"><h4>PROGRAMMING</h4><ul><li>Python</li><li>XML</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>C</li><li>SQL</li></ul></div>
+        <div class="kit"><h4>TESTING</h4><ul><li>UAT cycles with Business Analysts</li><li>Manual functional testing</li><li>Defect root-cause analysis</li><li>Data &amp; report validation</li></ul></div>
+        <div class="kit"><h4>TOOLS</h4><ul><li>PyCharm</li><li>VS Code</li><li>GitLab</li><li>Sourcetree</li><li>TablePlus</li><li>Termius</li><li>Figma</li><li>Lark (Base, Anycross)</li></ul></div>
+        <div class="kit"><h4>AI &amp; DATA</h4><ul><li>Machine Learning</li><li>Deep Learning</li><li>Computer Vision</li><li>NLP</li><li>TensorFlow / Keras</li><li>PyTorch</li><li>NumPy</li><li>OpenCV</li></ul></div>
+        <div class="kit"><h4>WITH PEOPLE</h4><ul><li>Analytical &amp; critical thinking</li><li>Collaboration</li><li>Adaptability</li><li>Initiative</li><li>Time management</li></ul></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<canvas class="wave-band" id="wave" aria-hidden="true"></canvas>
+<footer class="foot" id="contact">
+  <div class="wrap foot-in">
+    <div>
+      <h2>Get in touch</h2>
+      <p class="edu">Final-year Computer Science student at BINUS University, Jakarta &middot; Sep 2023 &ndash; present</p>
+      <div class="contact-row">
+        <button class="mailbtn" type="button" id="mailbtn" data-mail="jhansenboleh@gmail.com" title="Click to copy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3 6.5l9 7 9-7"/></svg>
+          <span id="mailtext">jhansenboleh@gmail.com</span>
+        </button>
+        <a class="iconlink" href="https://www.linkedin.com/in/jhansen-orlando-659b21383" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a class="iconlink" href="https://www.instagram.com/anjhsen" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.7" cy="6.3" r="1.3" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="iconlink" href="https://github.com/jhansen2005" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+        </a>
+        <span class="copied" id="copied">Copied</span>
+      </div>
+    </div>
+
+    <div class="avail">
+      <h5>AVAILABILITY</h5>
+      <dl>
+        <dt>Roles</dt><dd>Odoo / ERP developer, junior level</dd>
+        <dt>Also open to</dt><dd>AI engineering &middot; QA and testing</dd>
+        <dt>Based in</dt><dd>Jakarta, Indonesia &middot; open to remote</dd>
+        <dt>Start</dt><dd>After graduation, or part-time alongside final year</dd>
+        <dt>Core stack</dt><dd>Python, Odoo module development, PostgreSQL</dd>
+      </dl>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ================= project filter ================= */
+  var buttons = [].slice.call(document.querySelectorAll('.filters button'));
+  var cards = [].slice.call(document.querySelectorAll('#grid .docket'));
+  var empty = document.getElementById('empty');
+  var countEl = document.getElementById('count');
+
+  function applyFilter(filter, label) {
+    var shown = 0;
+    cards.forEach(function (card) {
+      var tags = (card.getAttribute('data-tags') || '').split(/\s+/);
+      var match = filter === 'all' || tags.indexOf(filter) !== -1;
+      card.hidden = !match;
+      if (match) shown++;
+    });
+    if (empty) empty.hidden = shown !== 0;
+    if (countEl) {
+      countEl.textContent = filter === 'all'
+        ? 'Showing all ' + shown + ' jobs'
+        : 'Showing ' + shown + ' of ' + cards.length + ' jobs tagged ' + label.toLowerCase();
+    }
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+      applyFilter(btn.getAttribute('data-f'), btn.textContent.trim());
+    });
+  });
+  applyFilter('all', 'All');   /* so the count is right before anything is clicked */
+
+  /* ================= module cross-links ================= */
+  [].slice.call(document.querySelectorAll('button.modchip[data-go]')).forEach(function (b) {
+    b.addEventListener('click', function () {
+      var target = document.getElementById(b.getAttribute('data-go'));
+      if (!target) return;
+      if (target.hidden) {
+        var all = buttons.filter(function (x) { return x.getAttribute('data-f') === 'all'; })[0];
+        if (all) all.click();
+      }
+      target.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'center' });
+      target.classList.remove('flash');
+      void target.offsetWidth;
+      target.classList.add('flash');
+      setTimeout(function () { target.classList.remove('flash'); }, 1300);
+    });
+  });
+
+  /* ================= scroll spy ================= */
+  var navA = [].slice.call(document.querySelectorAll('.navlinks a'));
+  var targets = navA.map(function (a) { return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  /* the active section is simply the last one whose top has passed under the
+     header. A narrow observer band picked the wrong section whenever the one
+     above it was shorter than the band was far down the screen. */
+  var mast = document.querySelector('.mast');
+  var navLock = 0;
+  function syncNav() {
+    if (!targets.length || performance.now() < navLock) return;
+    var line = (mast ? mast.getBoundingClientRect().height : 0) + 16;
+    var cur = null;
+    targets.forEach(function (sec) {
+      if (sec.getBoundingClientRect().top <= line) cur = sec;
+    });
+    /* the last section can never reach the line once the page bottoms out */
+    var doc = document.documentElement;
+    if (window.scrollY + window.innerHeight >= doc.scrollHeight - 4) {
+      cur = targets[targets.length - 1];
+    }
+    navA.forEach(function (a) {
+      a.classList.toggle('here', !!cur && a.getAttribute('href') === '#' + cur.id);
+    });
+  }
+  window.addEventListener('scroll', syncNav, { passive: true });
+  window.addEventListener('resize', syncNav);
+  navA.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var sec = document.querySelector(a.getAttribute('href'));
+      if (!sec) return;
+      e.preventDefault();
+      var head = mast ? mast.getBoundingClientRect().height : 0;
+      var top = sec.getBoundingClientRect().top + window.scrollY - head - 12;
+      navA.forEach(function (x) { x.classList.toggle('here', x === a); });
+      navLock = performance.now() + 900;      /* let the scroll land before the spy resumes */
+      var goal = Math.max(0, top), from = window.scrollY;
+      window.scrollTo({ top: goal, behavior: still ? 'auto' : 'smooth' });
+      /* if smooth scrolling is unavailable the click would otherwise do nothing */
+      setTimeout(function () {
+        if (Math.abs(window.scrollY - from) < 2 && Math.abs(goal - from) > 4) {
+          window.scrollTo(0, goal);
+        }
+      }, 140);
+      if (history.replaceState) history.replaceState(null, '', a.getAttribute('href'));
+    });
+  });
+  window.addEventListener('hashchange', syncNav);
+  syncNav();
+
+  /* ================= copy email ================= */
+  var mailbtn = document.getElementById('mailbtn');
+  var copied = document.getElementById('copied');
+  if (mailbtn) {
+    mailbtn.addEventListener('click', function () {
+      var addr = mailbtn.getAttribute('data-mail');
+      var done = function () {
+        if (!copied) return;
+        copied.classList.add('show');
+        setTimeout(function () { copied.classList.remove('show'); }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(addr).then(done, fallback);
+      } else {
+        fallback();
+      }
+      function fallback() {
+        try {
+          var ta = document.createElement('textarea');
+          ta.value = addr;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          done();
+        } catch (e) { /* clipboard unavailable; the address is on screen anyway */ }
+      }
+    });
+  }
+
+  /* ================= pixel art ================= */
+  function css(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  var CRATE = [
+    'OOOOOOOO','OccccccO','OcOccOcO','OccOOccO',
+    'OccOOccO','OcOccOcO','OccccccO','OOOOOOOO'
+  ];
+  var GEAR = [
+    ' g gg g ',' gggggg ','gggggggg','ggg  ggg',
+    'ggg  ggg','gggggggg',' gggggg ',' g gg g '
+  ];
+  var WORKER_A = [
+    ' hhhh ','hhhhhh',' ffff ',' ffff ',
+    'bbbbbb','bbbbbb','bbbbbb',' dd dd',' dd dd'
+  ];
+  var WORKER_B = [
+    ' hhhh ','hhhhhh',' ffff ',' ffff ',
+    'bbbbbb','bbbbbb','bbbbbb',' dddd ','dd  dd'
+  ];
+
+  var BOAT = [
+    '      m           ',
+    '      mss         ',
+    '      mssss       ',
+    '      msssss      ',
+    '      mssss       ',
+    '      m           ',
+    '  HHHHHHHHHHHHHH  ',
+    '   HHHHHHHHHHHH   ',
+    '    HHHHHHHHHH    '
+  ];
+
+  /* sailor poses, cycled every couple of seconds */
+  var POSES = [
+    [ /* cheer */
+      ' a   a ',' a k a ',' akkka ','  fff  ','  ppp  ','  ppp  ','  l l  '
+    ],
+    [ /* wave */
+      '     a ','  kk a ',' kkkka ','  fff  ','  ppp  ','  ppp  ','  l l  '
+    ],
+    [ /* hands on hips */
+      '  kkk  ',' kkkkk ','  fff  ',' apppa ',' apppa ','  ppp  ','  l l  '
+    ],
+    [ /* pointing ahead */
+      '  kkk  ',' kkkkk ','  fff  ','  pppaa','  ppp  ','  ppp  ','  l l  '
+    ],
+    [ /* arms out */
+      '  kkk  ',' kkkkk ','  fff  ','a ppp a','aapppaa','  ppp  ','  l l  '
+    ]
+  ];
+
+  var DOLPHIN = [
+    '        ddd ',
+    '   d   ddddd',
+    '   dd ddddd ',
+    ' ddddddddd  ',
+    'ddddddddd   ',
+    'tdddddd     ',
+    'tt          '
+  ];
+
+  function sprite(ctx, art, x, y, px, pal, flip) {
+    var w = 0, r, c;
+    for (r = 0; r < art.length; r++) w = Math.max(w, art[r].length);
+    for (r = 0; r < art.length; r++) {
+      var row = art[r];
+      for (c = 0; c < row.length; c++) {
+        var key = row.charAt(c);
+        if (key === ' ') continue;
+        var col = pal[key];
+        if (!col) continue;
+        var cx = flip ? (w - 1 - c) : c;
+        ctx.fillStyle = col;
+        ctx.fillRect(Math.round(x + cx * px), Math.round(y + r * px), px, px);
+      }
+    }
+  }
+
+  function fitCanvas(cv) {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = cv.getBoundingClientRect();
+    if (!rect.width) return null;
+    cv.width = Math.round(rect.width * dpr);
+    cv.height = Math.round(rect.height * dpr);
+    var ctx = cv.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.imageSmoothingEnabled = false;
+    return { ctx: ctx, w: rect.width, h: rect.height };
+  }
+
+  var belt = document.getElementById('belt');
+  var wave = document.getElementById('wave');
+  var beltState = null, waveState = null, beltPaused = false;
+
+  function setupBelt() {
+    if (!belt) return;
+    beltState = fitCanvas(belt);
+    if (!beltState) return;
+    beltState.pal = {
+      O: css('--ink'), c: css('--sun'), g: css('--cyan'),
+      h: css('--sun'), f: css('--surface'), b: css('--blue'), d: css('--ink')
+    };
+    beltState.belt = css('--belt');
+    beltState.tread = css('--wave-1');
+  }
+
+  function drawBelt(t) {
+    if (!beltState) return;
+    var ctx = beltState.ctx, w = beltState.w, h = beltState.h, px = 3;
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = beltState.belt;
+    ctx.fillRect(0, h - 12, w, 12);
+
+    var gap = 18, off = (t * 0.045) % gap;
+    ctx.fillStyle = beltState.tread;
+    for (var x = -gap; x < w + gap; x += gap) ctx.fillRect(Math.floor(x - off), h - 12, 3, 12);
+
+    var span = 190, drift = (t * 0.045) % span;
+    var kinds = [CRATE, WORKER_A, GEAR];
+    for (var i = -1; i < Math.ceil(w / span) + 1; i++) {
+      var sx = Math.floor(i * span - drift);
+      var kind = kinds[((i % 3) + 3) % 3];
+      var art = kind;
+      var bob = 0;
+      if (kind === WORKER_A) {
+        var step = Math.floor(t / 180) % 2 === 0;
+        art = step ? WORKER_A : WORKER_B;
+        bob = step ? -1 : 0;
+      }
+      sprite(ctx, art, sx, h - 12 - art.length * px + bob, px, beltState.pal, false);
+    }
+  }
+
+  function setupWave() {
+    if (!wave) return;
+    waveState = fitCanvas(wave);
+    if (!waveState) return;
+    waveState.colors = [css('--wave-3'), css('--wave-2'), css('--wave-1')];
+    waveState.pal = {
+      m: css('--ink'), s: css('--flag'), H: css('--coral'),
+      k: css('--sun'), f: css('--surface'), p: css('--surface'),
+      a: css('--surface'), l: css('--ink'),
+      d: css('--cyan'), t: css('--cyan')
+    };
+  }
+
+  var LAYERS = [
+    { amp: 9,  freq: 0.020, speed: 0.00055, baseR: 0.50 },
+    { amp: 12, freq: 0.015, speed: 0.00085, baseR: 0.63 },
+    { amp: 8,  freq: 0.027, speed: 0.00120, baseR: 0.76 }
+  ];
+
+  function crestY(cfg, x, t, h, px) {
+    var y = cfg.baseR * h + Math.sin(x * cfg.freq + t * cfg.speed) * cfg.amp;
+    return Math.floor(y / px) * px;
+  }
+
+  function drawWave(t) {
+    if (!waveState) return;
+    var ctx = waveState.ctx, w = waveState.w, h = waveState.h, px = 6;
+    ctx.clearRect(0, 0, w, h);
+
+    for (var L = 0; L < LAYERS.length; L++) {
+      var cfg = LAYERS[L];
+      ctx.fillStyle = waveState.colors[L];
+      for (var x = 0; x < w + px; x += px) {
+        var y = crestY(cfg, x, t, h, px);
+        ctx.fillRect(x, y, px, h - y);
+      }
+    }
+
+    var front = LAYERS[0];
+    var loop = w + 200;
+    var bx = ((t * 0.030) % loop) - 120;
+    bx = Math.floor(bx / px) * px;
+    var by = crestY(front, bx, t, h, px) - BOAT.length * 4 + 4;
+
+    /* two dolphins trailing the boat, each on its own leap cycle */
+    for (var d = 0; d < 2; d++) {
+      var dx = bx - 70 - d * 78;
+      if (dx < -140) dx += loop;
+      var phase = ((t * 0.0011) + d * 0.47) % 1;
+      if (phase < 0.62) {
+        var arc = Math.sin((phase / 0.62) * Math.PI);
+        var surface = crestY(front, dx, t, h, px);
+        var dy = surface - arc * 34 - 10;
+        sprite(ctx, DOLPHIN, dx, dy, 3, waveState.pal, false);
+      }
+    }
+
+    sprite(ctx, BOAT, bx, by, 4, waveState.pal, false);
+
+    var pose = POSES[Math.floor(t / 1600) % POSES.length];
+    sprite(ctx, pose, bx + 40, by - pose.length * 4 + 24, 4, waveState.pal, false);
+  }
+
+  /* ================= left rail climber ================= */
+  var CLIMB_A = [
+    '   hhh   ',
+    '  hhhhh  ',
+    ' hhhhhhh ',
+    '   fff   ',
+    'a  bbb   ',
+    'a  bbb  a',
+    '   bbb  a',
+    '   bbb   ',
+    '  l   l  ',
+    '  l   l  ',
+    ' ss    s '
+  ];
+  var CLIMB_B = [
+    '   hhh   ',
+    '  hhhhh  ',
+    ' hhhhhhh ',
+    '   fff   ',
+    '   bbb  a',
+    'a  bbb  a',
+    'a  bbb   ',
+    '   bbb   ',
+    '  l   l  ',
+    '  l   l  ',
+    ' s    ss '
+  ];
+  var IDLE = [
+    '   hhh   ',
+    '  hhhhh  ',
+    ' hhhhhhh ',
+    '   fff   ',
+    'a  bbb  a',
+    'a  bbb  a',
+    '   bbb   ',
+    '   bbb   ',
+    '  l   l  ',
+    '  l   l  ',
+    ' ss   ss '
+  ];
+  var LINES = [
+    'Six months on this ladder.',
+    'Odoo 10 down there. Odoo 19 up here.',
+    'Mind the kanban views.',
+    'The bug is never where the error points.',
+    'Prs to Dus. Never forgetting that one.',
+    'Keep scrolling, the reports are further down.'
+  ];
+
+  var rail = document.getElementById('rail');
+  var climber = document.getElementById('climber');
+  var bubble = document.getElementById('bubble');
+  var climbState = null, scrolling = 0, lineAt = 0, hopUntil = 0;
+
+  function setupClimber() {
+    if (!climber || !rail) return;
+    if (getComputedStyle(rail).display === 'none') { climbState = null; return; }
+    climbState = fitCanvas(climber);
+    if (!climbState) return;
+    climbState.pal = {
+      h: css('--sun'),    /* hard hat   */
+      f: css('--skin'),   /* face       */
+      a: css('--skin'),   /* arms       */
+      b: css('--cyan'),   /* hi-vis vest*/
+      l: css('--blue'),   /* trousers   */
+      s: css('--rail')    /* boots      */
+    };
+    climbState.rail = css('--rail');
+    climbState.rung = css('--rung');
+  }
+
+  function drawClimber(t) {
+    if (!climbState) return;
+    var ctx = climbState.ctx, w = climbState.w, h = climbState.h, px = 4;
+
+    ctx.clearRect(0, 0, w, h);
+
+    /* the ladder */
+    var railW = 5, lx = Math.round(w / 2 - 17), rx = Math.round(w / 2 + 12);
+    ctx.fillStyle = climbState.rail;
+    ctx.fillRect(lx, 0, railW, h);
+    ctx.fillRect(rx, 0, railW, h);
+    ctx.fillStyle = climbState.rung;
+    for (var y = 14; y < h; y += 26) ctx.fillRect(lx, y, rx - lx + railW, 4);
+
+    /* how far down the page are we */
+    var doc = document.documentElement;
+    var max = (doc.scrollHeight - window.innerHeight) || 1;
+    var prog = Math.min(1, Math.max(0, window.scrollY / max));
+
+    var spriteH = CLIMB_A.length * px;
+    var top = 64, bottom = h - spriteH - 30;
+    var y0 = Math.round(top + prog * (bottom - top));
+
+    var moving = t < scrolling + 260;
+    var art = IDLE;
+    if (moving) art = (Math.floor(t / 130) % 2 === 0) ? CLIMB_A : CLIMB_B;
+    else if (Math.floor(t / 900) % 7 === 0) art = CLIMB_B;
+
+    var hop = t < hopUntil ? -Math.round(Math.abs(Math.sin(t / 60)) * 7) : 0;
+    var x0 = Math.round(w / 2 - (CLIMB_A[0].length * px) / 2);
+    sprite(ctx, art, x0, y0 + hop, px, climbState.pal, false);
+
+    if (bubble && !bubble.hidden) bubble.style.top = (y0 + hop - 6) + 'px';
+  }
+
+  if (climber) {
+    climber.addEventListener('click', function () {
+      hopUntil = performance.now() + 520;
+      if (!bubble) return;
+      bubble.textContent = LINES[lineAt % LINES.length];
+      lineAt++;
+      bubble.hidden = false;
+      clearTimeout(bubble._t);
+      bubble._t = setTimeout(function () { bubble.hidden = true; }, 3600);
+    });
+  }
+  window.addEventListener('scroll', function () {
+    scrolling = performance.now();
+    /* redraw here too, so the climber keeps up even where rAF is throttled */
+    drawClimber(scrolling);
+  }, { passive: true });
+
+  /* ================= hero name: letters, snake, hopper ================= */
+  var HOP_AIR = [
+    '  hhh  ', ' hhhhh ', '  fff  ', ' abbba ',
+    '  bbb  ', '  bbb  ', ' l   l ', 's     s'
+  ];
+  var HOP_LAND = [
+    '  hhh  ', ' hhhhh ', '  fff  ', ' abbba ',
+    '  bbb  ', '  bbb  ', '  l l  ', ' s   s '
+  ];
+  /* dangling off a cursor: arms up, legs kicking */
+  var HELD_A = [
+    'a hhh a', 'ahhhhha', ' afffa ', '  bbb  ',
+    '  bbb  ', '  bbb  ', ' l   l ', 's     s'
+  ];
+  var HELD_B = [
+    '  hhh  ', 'ahhhhha', 'a fff a', '  bbb  ',
+    '  bbb  ', '  bbb  ', '  l l  ', ' s   s '
+  ];
+
+  var wrap = document.getElementById('namewrap');
+  var heroName = document.getElementById('heroname');
+  var hopCv = document.getElementById('hop');
+  var backCv = document.getElementById('fxback');
+  var frontCv = document.getElementById('fxfront');
+
+  var letters = [];
+  var hopState = null, backState = null, frontState = null;
+  var boxes = [];
+  var snakeStart = 0, hoverTimer = 0;
+  var hopT0 = 0, bigJumpUntil = 0;
+  var hopPos = { x: 0, y: 0 };
+  var dragging = false, dragOff = { x: 0, y: 0 }, dragPos = null, releaseAt = 0, releaseY = 0;
+
+  function splitLetters(root) {
+    var found = [];
+    [].slice.call(root.childNodes).forEach(function (node) {
+      if (node.nodeType === 3) {
+        var frag = document.createDocumentFragment();
+        node.nodeValue.split('').forEach(function (ch) {
+          if (ch === ' ') { frag.appendChild(document.createTextNode(' ')); return; }
+          var sp = document.createElement('span');
+          sp.className = 'ltr';
+          sp.textContent = ch;
+          frag.appendChild(sp);
+          found.push(sp);
+        });
+        root.replaceChild(frag, node);
+      } else if (node.nodeType === 1) {
+        found = found.concat(splitLetters(node));
+      }
+    });
+    return found;
+  }
+
+  if (heroName) {
+    heroName.setAttribute('aria-label', heroName.textContent.trim());
+    letters = splitLetters(heroName);
+    letters.forEach(function (sp) { sp.setAttribute('aria-hidden', 'true'); });
+  }
+
+  function setupHero() {
+    if (!wrap || !letters.length) return;
+    backState = fitCanvas(backCv);
+    frontState = fitCanvas(frontCv);
+    hopState = fitCanvas(hopCv);
+    if (!hopState) return;
+
+    hopState.pal = {
+      h: css('--sun'), f: css('--skin'), a: css('--skin'),
+      b: css('--cyan'), l: css('--blue'), s: css('--rail')
+    };
+    hopState.px = hopState.w < 700 ? 3 : 4;
+    hopState.snake = [css('--sun'), css('--cyan'), css('--blue')];
+
+    var base = hopCv.getBoundingClientRect();
+    boxes = letters.map(function (sp) {
+      var r = sp.getBoundingClientRect();
+      return {
+        cx: r.left - base.left + r.width / 2,
+        cy: r.top - base.top + r.height / 2,
+        top: r.top - base.top,
+        rx: r.width / 2 + 8,
+        ry: r.height / 2 + 8
+      };
+    });
+    hopState.xs = boxes.map(function (b) { return b.cx; });
+  }
+
+  /* ---- the snake ---- */
+  var ORBIT = 950, STAGGER = 250, TRAIL = 18;
+
+  function drawSnake(t) {
+    if (!backState || !frontState) return;
+    var bc = backState.ctx, fc = frontState.ctx;
+    bc.clearRect(0, 0, backState.w, backState.h);
+    fc.clearRect(0, 0, frontState.w, frontState.h);
+    if (!snakeStart || !boxes.length) return;
+
+    var el = t - snakeStart;
+    if (el > boxes.length * STAGGER + ORBIT + 200) {
+      if (!dragging) { snakeStart = 0; return; }
+      snakeStart = t;   /* loop it while he is being carried, with no blank frame */
+      el = 0;
+    }
+
+    var cols = hopState ? hopState.snake : ['#FFC247', '#3FD3F0', '#5AA3FF'];
+    for (var i = 0; i < boxes.length; i++) {
+      var p = (el - i * STAGGER) / ORBIT;
+      if (p < 0 || p > 1) continue;
+      var bx = boxes[i];
+      for (var k = 0; k < TRAIL; k++) {
+        var q = p - k * 0.016;
+        if (q < 0) continue;
+        /* start at the bottom of the letter, travel up the back, down the front */
+        var th = Math.PI / 2 + q * Math.PI * 2;
+        var x = bx.cx + bx.rx * Math.cos(th);
+        var y = bx.cy + bx.ry * Math.sin(th);
+        var ctx = Math.sin(th) < 0 ? bc : fc;   /* upper half runs behind the glyph */
+        var fade = 1 - k / TRAIL;
+        ctx.globalAlpha = fade * fade;
+        ctx.fillStyle = k < 4 ? cols[0] : (k < 10 ? cols[1] : cols[2]);
+        var G = 4, sz = k < 5 ? G * 2 : G;   /* chunky blocks on a fixed grid */
+        ctx.fillRect(Math.round(x / G) * G - sz / 2, Math.round(y / G) * G - sz / 2, sz, sz);
+      }
+    }
+    bc.globalAlpha = fc.globalAlpha = 1;
+  }
+
+  /* a run already under way is left alone, so poking him never cuts it short */
+  function fireSnake() { if (!snakeStart) snakeStart = performance.now(); }
+
+  if (wrap) {
+    wrap.addEventListener('mouseenter', function () {
+      clearTimeout(hoverTimer);
+      hoverTimer = setTimeout(fireSnake, 1000);   /* only after a deliberate hover */
+    });
+    wrap.addEventListener('mouseleave', function () {
+      if (!dragging) clearTimeout(hoverTimer);
+    });
+  }
+
+  /* ---- the hopper ---- */
+  function drawHop(t) {
+    if (!hopState || !hopState.xs || hopState.xs.length < 2) return;
+    var ctx = hopState.ctx, w = hopState.w, h = hopState.h, px = hopState.px;
+    ctx.clearRect(0, 0, w, h);
+
+    var sw = HOP_AIR[0].length * px, sh = HOP_AIR.length * px;
+    var art, flip = false, x, y;
+
+    if (dragging && dragPos) {
+      x = dragPos.x; y = dragPos.y;
+      art = (Math.floor(t / 110) % 2) ? HELD_A : HELD_B;
+    } else {
+      var n = hopState.xs.length;
+      var STEP = 470, AIR = 340;
+      var k = ((t - hopT0) / STEP) % ((n - 1) * 2);
+      if (k < 0) k += (n - 1) * 2;
+      var i = Math.floor(k);
+      var f = Math.min(1, (k - i) * (STEP / AIR));
+      var from, to;
+      if (i < n - 1) { from = i; to = i + 1; }
+      else { var j = i - (n - 1); from = (n - 1) - j; to = from - 1; flip = true; }
+
+      var lift = 15 + (t < bigJumpUntil ? 16 : 0);
+      x = hopState.xs[from] + (hopState.xs[to] - hopState.xs[from]) * f - sw / 2;
+      /* his feet rest on the top edge of the letters */
+      var ground = (boxes[from].top + (boxes[to].top - boxes[from].top) * f) - sh + 3;
+      y = ground - Math.sin(Math.PI * f) * lift;
+      art = (f > 0.03 && f < 0.97) ? HOP_AIR : HOP_LAND;
+
+      /* short fall back to the line after being dropped */
+      var since = t - releaseAt;
+      if (releaseAt && since < 320) {
+        var e = since / 320;
+        y = releaseY + (y - releaseY) * e * e;
+        art = HOP_AIR;
+      }
+    }
+
+    x = Math.max(0, Math.min(w - sw, x));
+    y = Math.max(0, Math.min(h - sh, y));
+    hopPos.x = x; hopPos.y = y;
+    sprite(ctx, art, Math.round(x), Math.round(y), px, hopState.pal, flip);
+  }
+
+  function nearHim(e) {
+    if (!hopState) return null;
+    var r = hopCv.getBoundingClientRect();
+    var px = e.clientX - r.left, py = e.clientY - r.top;
+    var sw = HOP_AIR[0].length * hopState.px, sh = HOP_AIR.length * hopState.px;
+    var hit = px > hopPos.x - 8 && px < hopPos.x + sw + 8 &&
+              py > hopPos.y - 8 && py < hopPos.y + sh + 8;
+    return hit ? { x: px, y: py } : null;
+  }
+
+  if (wrap && hopCv) {
+    wrap.addEventListener('pointerdown', function (e) {
+      var p = nearHim(e);
+      if (!p) return;
+      dragging = true;
+      fireSnake();
+      dragOff.x = p.x - hopPos.x;
+      dragOff.y = p.y - hopPos.y;
+      dragPos = { x: hopPos.x, y: hopPos.y };
+      wrap.style.cursor = 'grabbing';
+      try { wrap.setPointerCapture(e.pointerId); } catch (err) {}
+      e.preventDefault();
+    });
+
+    wrap.addEventListener('pointermove', function (e) {
+      var r = hopCv.getBoundingClientRect();
+      if (dragging && hopState) {
+        var sw = HOP_AIR[0].length * hopState.px;
+        var lo = hopState.xs[0] - sw / 2;
+        var hi = hopState.xs[hopState.xs.length - 1] - sw / 2;
+        dragPos = {
+          x: Math.max(lo, Math.min(hi, e.clientX - r.left - dragOff.x)),
+          y: e.clientY - r.top - dragOff.y
+        };
+        if (still) paintStill();
+      } else {
+        wrap.style.cursor = nearHim(e) ? 'grab' : '';
+      }
+    });
+
+    var drop = function () {
+      if (!dragging) return;
+      dragging = false;
+      wrap.style.cursor = '';
+      if (!hopState || !dragPos) return;
+      releaseY = dragPos.y;
+      releaseAt = performance.now();
+      /* carry on hopping from whichever letter he was dropped nearest to */
+      var sw = HOP_AIR[0].length * hopState.px;
+      var cx = dragPos.x + sw / 2, best = 0, bd = 1e9;
+      hopState.xs.forEach(function (lx, i) {
+        var d = Math.abs(lx - cx);
+        if (d < bd) { bd = d; best = i; }
+      });
+      hopT0 = releaseAt - best * 470;
+      dragPos = null;
+      fireSnake();
+      bigJumpUntil = releaseAt + 700;
+      if (still) paintStill();
+    };
+    wrap.addEventListener('pointerup', drop);
+    wrap.addEventListener('pointercancel', drop);
+  }
+
+  /* the display face arrives late, so measure again once it has */
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { setupHero(); paintStill(); });
+  }
+
+  function setupAll() { setupBelt(); setupWave(); setupClimber(); setupHero(); }
+  function paintStill() {
+    var t = still ? 0 : performance.now();
+    drawBelt(t); drawWave(t); drawClimber(t); drawHop(t); drawSnake(t);
+  }
+
+  var last = 0, frozen = 0, lastY = -1;
+  function frame(now) {
+    if (window.scrollY !== lastY) { lastY = window.scrollY; syncNav(); }
+    if (beltPaused) { frozen = frozen || now; drawBelt(frozen); }
+    else { if (frozen) { frozen = 0; } drawBelt(now); }
+    drawWave(now);
+    drawClimber(now);
+    drawHop(now);
+    drawSnake(now);
+    last = now;
+    requestAnimationFrame(frame);
+  }
+
+  setupAll();
+  paintStill();                       /* first frame now, so nothing is blank on load */
+  if (!still) requestAnimationFrame(frame);
+
+  /* a background tab suspends requestAnimationFrame; repaint when it comes back */
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') { setupAll(); paintStill(); }
+  });
+
+  if (belt) {
+    belt.addEventListener('click', function () {
+      beltPaused = !beltPaused;
+      belt.title = beltPaused ? 'Click to restart the line' : 'Click to pause the line';
+    });
+  }
+
+  var rt;
+  window.addEventListener('resize', function () {
+    clearTimeout(rt);
+    rt = setTimeout(function () { setupAll(); paintStill(); }, 150);
+  });
+
+  if (window.matchMedia) {
+    var scheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (scheme.addEventListener) {
+      scheme.addEventListener('change', function () { setupAll(); paintStill(); });
+    }
+  }
+})();
+</script>
+</body>
+</html>
