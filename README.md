@@ -27,4 +27,4 @@ The page follows the reader's light/dark system setting automatically.
 
 ## About the case studies
 
-The write-ups describe internal work at PT Porto Indonesia Sejahtera in prose. No source code from the company is included, and none will be — that code belongs to Porto.
+The write-ups describe internal work at PT Porto Indonesia Sejahtera in prose. No source code from the company is included, and none will be.
