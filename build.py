@@ -20,7 +20,7 @@ html = f'''<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Jhansen Orlando - Odoo developer. Six months rebuilding ERP modules across Odoo 10, 16 and 19 for a footwear manufacturer in Jakarta.">
+<meta name="description" content="Jhansen Orlando - Odoo developer. Since February 2026, rebuilding ERP modules across Odoo 10, 16 and 19 for a footwear manufacturer in Jakarta.">
 <link rel="icon" href="{FAVICON}">
 {head.strip()}
 </head>
